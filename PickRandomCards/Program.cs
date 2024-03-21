@@ -1,10 +1,20 @@
 ﻿using PickRandomCards;
 
-var _array = CardPicker.PickSomeCards(5);
+Console.WriteLine("Hello master, how many random cards would you like ?");
 
-foreach (var item in _array)
+string? line = Console.ReadLine();
+
+if (line == null)
 {
-    Console.WriteLine($" ==> {item}");
+    line = "1";
 }
 
-//Console.Write($" ==> {string.Join(" ==> ", _array)}");
+if (int.TryParse(line, out int id))
+{
+    string[] deck = CardPicker.PickSomeCards(id);
+    foreach (var card in deck)
+    {
+        Console.WriteLine($"==> {card}");
+    }
+    Console.WriteLine($"Here is your {deck.Length} card deck, master.");
+}
