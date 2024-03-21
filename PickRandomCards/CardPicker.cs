@@ -23,13 +23,13 @@ namespace PickRandomCards
         static Random Random = new Random();
 
         static string RandomValue() {
-            int rand = Random.Next(1, 13);
+            int rand = Random.Next(1, 14);
             string[] cardValues = {"Ace", "Two", "Three", "Four", "Five", "Six", "Seven",
                                    "Eight", "Nine", "Ten", "Jack", "Queen", "King"};
             return cardValues[rand];
         }
         static string RandomSuit() {
-            int rand = Random.Next(1, 4);
+            int rand = Random.Next(1, 5);
             string[] cardSuits = { "of Spades", "of Clubs", "of Hearts", "of Diamonds" };
             return cardSuits[rand];
         }   
